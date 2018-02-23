@@ -147,7 +147,7 @@ new (function() {
 
     ext.futbol1 = function(equipoNombre, callback) {
 	var teamNumber = 0;    
-	connection.send("-c say -t 'Buscando jugadores de"+equipoNombre+"'");
+	connection.send("-c say -t 'Buscando jugadores de "+equipoNombre+"'");
 	if (equipoNombre == "Cordoba") {
 		teamNumber = 295;
 	} else if (equipoNombre == "Barcelona") {
