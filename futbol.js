@@ -145,7 +145,16 @@ new (function() {
 	callback();
     };
 
-    ext.futbol1 = function(teamNumber, callback) {
+    ext.futbol1 = function(equipoNombre, callback) {
+	var teamNumber = 0;    
+	connection.send("-c say -t 'Buscando jugadores de"+equipoNombre+"'");
+	if (equipoNombre == "Cordoba") {
+		teamNumber = 295;
+	} elseif (equipoNombre == "Barcelona") {
+		teamNumber = 303
+	} elseif (equipoNombre == "Madrid") {
+		connection.send("-c say -t 'ohhhhh lo siento'");
+	}
 	$.ajax({
 	    beforeSend: function(request) {
 		request.setRequestHeader("X-Auth-Token", '8adec10f2e6e49d286550bb0e7307859');
