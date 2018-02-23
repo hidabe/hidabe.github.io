@@ -150,9 +150,9 @@ new (function() {
 	connection.send("-c say -t 'Buscando jugadores de"+equipoNombre+"'");
 	if (equipoNombre == "Cordoba") {
 		teamNumber = 295;
-	} elseif (equipoNombre == "Barcelona") {
+	} else if (equipoNombre == "Barcelona") {
 		teamNumber = 303;
-	} elseif (equipoNombre == "Madrid") {
+	} else if (equipoNombre == "Madrid") {
 		connection.send("-c say -t 'ohhhhh lo siento'");
 	}
 	$.ajax({
