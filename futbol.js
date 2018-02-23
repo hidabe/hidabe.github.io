@@ -220,7 +220,7 @@ new (function() {
 	    ['w', 'relative movement:%m.motorDirection degrees:%nº', 'relative_movement', 'right', 0],
 	    ['w', 'set rotate speed %n', 'set_rotate_speed', 100],
 	    ['w', 'Mouth: %m.expression', 'mouthExpression', 'smile'],
-	    ['w', 'Jugadores de %s', 'futbol1', '295'],
+	    ['w', 'Jugadores de %m.equipo', 'futbol1', 'Cordoba'],
 	    ['b', 'is connected', 'is_connected'],
 	    ['h', 'when touch %m.touchZone', 'is_touch', 'up'],
 	    ['h', 'when listen %s', 'when_listen', 'hello'],
@@ -234,7 +234,8 @@ new (function() {
 	    expression: ['smile', 'sad', 'serious', 'love'],
 	    voice: ['english', 'spanish'],        	
 	    lessMore: ['<', '>'],
-            eNe: ['=','not =']
+            eNe: ['=','not ='],
+	    equipo: ['Cordoba', 'Madrid', 'Barcelona']
     	},
     	url: 'https://github.com/LLK/scratchx/wiki#blocks'
     };
