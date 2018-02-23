@@ -151,7 +151,7 @@ new (function() {
 	if (equipoNombre == "Cordoba") {
 		teamNumber = 295;
 	} elseif (equipoNombre == "Barcelona") {
-		teamNumber = 303
+		teamNumber = 303;
 	} elseif (equipoNombre == "Madrid") {
 		connection.send("-c say -t 'ohhhhh lo siento'");
 	}
