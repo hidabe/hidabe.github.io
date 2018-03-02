@@ -171,7 +171,7 @@ new (function() {
 	});
     };
 	
-    ext.luz = function(colorLuz, brilloLuz, callback) {
+    ext.luz = function(colorLuz, brilloLuz, token, callback) {
 	var colorLuz = 'Blue';    
 	connection.send("-c say -t 'el brillo es  "+brilloLuz+"'");
 	if (colorLuz == "Blue") {
@@ -189,6 +189,17 @@ new (function() {
 		if ( brilloLuzReal > 80 ) {
 			connection.send("-c say -t 'Ojo, esto te va a doler'");
 		}
+	    $.ajax({
+	    data:{ color: colorLuz },
+	    beforeSend: function(request) {
+		request.setRequestHeader("Authorization", 'Bearer '+token);
+	    },
+	    dataType: "json",
+	    url: "https://api.lifx.com/v1/lights/all/state",
+	    success: function(data) {
+	    }
+	});
+		
 	} else {
 		connection.send("-c say -t 'Pon un valor entre el 1 y el 100'");
 	}
@@ -270,7 +281,7 @@ new (function() {
 	    ['w', 'set rotate speed %n', 'set_rotate_speed', 100],
 	    ['w', 'Mouth: %m.expression', 'mouthExpression', 'smile'],
 	    ['w', 'Jugadores de %m.equipo', 'futbol1', 'Cordoba'],
-            ['w', 'Luz de color %m.colorLuz brilloLuz:%n', 'luz', 'Blue', 50],
+            ['w', 'Luz de color %m.colorLuz brilloLuz:%n token:%n', 'luz', 'Blue', 50, 'TOKEN-HERE'],
 	    ['w', 'La palabra %s en el idioma $m.idioma se traduce al %m.idioma', 'traducir', 'Hello'],
 	    ['b', 'is connected', 'is_connected'],
 	    ['h', 'when touch %m.touchZone', 'is_touch', 'up'],
