@@ -170,6 +170,18 @@ new (function() {
 	    }
 	});
     };
+	
+    ext.luz = function(colorLuz, callback) {
+	var colorLuz = 'Blue';    
+	connection.send("-c say -t 'Ok, lo pondre de color "+colorLuz+"'");
+	if (colorLuz == "Blue") {
+		connection.send("-c say -t 'Ok, te lo podré en Azul');
+	} else if (colorLuz == "Green") {
+		connection.send("-c say -t 'Ok, te lo podré en Verde');
+	} else if (colorLuz == "Red") {
+		connection.send("-c say -t 'Ok, te lo podré en Rojo');
+	}
+    };
 
 
     ext.voice = function(text, callback) {
@@ -230,6 +242,7 @@ new (function() {
 	    ['w', 'set rotate speed %n', 'set_rotate_speed', 100],
 	    ['w', 'Mouth: %m.expression', 'mouthExpression', 'smile'],
 	    ['w', 'Jugadores de %m.equipo', 'futbol1', 'Cordoba'],
+            ['w', 'Luz de color %m.colorLuz', 'luz', 'Blue'],
 	    ['b', 'is connected', 'is_connected'],
 	    ['h', 'when touch %m.touchZone', 'is_touch', 'up'],
 	    ['h', 'when listen %s', 'when_listen', 'hello'],
@@ -244,7 +257,8 @@ new (function() {
 	    voice: ['english', 'spanish'],        	
 	    lessMore: ['<', '>'],
             eNe: ['=','not ='],
-	    equipo: ['Cordoba', 'Madrid', 'Barcelona']
+	    equipo: ['Cordoba', 'Madrid', 'Barcelona'],
+	    colorLuz: ['Blue', 'Green', 'Red']
     	},
     	url: 'https://github.com/LLK/scratchx/wiki#blocks'
     };
