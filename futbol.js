@@ -181,7 +181,17 @@ new (function() {
 	} else if (colorLuz == "Red") {
 		connection.send("-c say -t 'Ok, te lo podré en Rojo'");
 	}
-	    
+	
+	brilloLuzReal=brilloLuz--
+	
+	if ( brilloLuzReal > 0 && brilloLuzReal < 100 ) {
+		
+		if ( brilloLuzReal > 80 ) {
+			connection.send("-c say -t 'Ojo, esto te va a doler'");
+		}
+	} else {
+		connection.send("-c say -t 'Pon un valor entre el 1 y el 100'");
+	}
 	
     };
 
