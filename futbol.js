@@ -194,6 +194,22 @@ new (function() {
 	}
 	
     };
+	
+  ext.traducir = function(palabra, idiomaOrigen, idiomaDestino, callback) {
+  var teamNumber = 0;    
+  connection.send("-c say -t 'Traduciemdo "+palabra+"'");
+  $.ajax({
+      beforeSend: function(request) {
+    request.setRequestHeader("X-Auth-Token", '5c1d825a');
+      },
+      dataType: "json",
+      url: "https://od-api.oxforddictionaries.com:443/api/v1/entries/+"idiomaOrigen"+/change/translations="+idiomaDestino,
+      success: function(data) {
+    connection.send("-c say -t 'He encontrado la traduccion "+data.results[0].lexicalEntries[0].senses[0].subsenses[0].translations[0].text,+".'");
+      }
+  });
+    };
+
 
 
     ext.voice = function(text, callback) {
@@ -255,6 +271,7 @@ new (function() {
 	    ['w', 'Mouth: %m.expression', 'mouthExpression', 'smile'],
 	    ['w', 'Jugadores de %m.equipo', 'futbol1', 'Cordoba'],
             ['w', 'Luz de color %m.colorLuz brilloLuz:%n', 'luz', 'Blue', 50],
+	    ['w', 'La palabra %s en el idioma $m.idioma se traduce al %m.idioma', 'traducir', 'Hello'],
 	    ['b', 'is connected', 'is_connected'],
 	    ['h', 'when touch %m.touchZone', 'is_touch', 'up'],
 	    ['h', 'when listen %s', 'when_listen', 'hello'],
@@ -270,7 +287,8 @@ new (function() {
 	    lessMore: ['<', '>'],
             eNe: ['=','not ='],
 	    equipo: ['Cordoba', 'Madrid', 'Barcelona'],
-	    colorLuz: ['Blue', 'Green', 'Red']
+	    colorLuz: ['Blue', 'Green', 'Red'],
+            idioma: ['es','en','pt']
     	},
     	url: 'https://github.com/LLK/scratchx/wiki#blocks'
     };
