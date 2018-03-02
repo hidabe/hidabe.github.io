@@ -171,9 +171,9 @@ new (function() {
 	});
     };
 	
-    ext.luz = function(colorLuz, callback) {
+    ext.luz = function(colorLuz, brilloLuz, callback) {
 	var colorLuz = 'Blue';    
-	connection.send("-c say -t 'Ok, lo pondre de color "+colorLuz+"'");
+	connection.send("-c say -t 'el brillo es  "+brilloLuz+"'");
 	if (colorLuz == "Blue") {
 		connection.send("-c say -t 'Ok, te lo podré en Azul'");
 	} else if (colorLuz == "Green") {
@@ -181,6 +181,8 @@ new (function() {
 	} else if (colorLuz == "Red") {
 		connection.send("-c say -t 'Ok, te lo podré en Rojo'");
 	}
+	    
+	
     };
 
 
@@ -233,7 +235,7 @@ new (function() {
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
-            ['w', 'Connect ip: %s port: %n', 'connect', '169.254.98.67', 51717],
+            ['w', 'Connect ip: %s port: %n', 'connect', 'robot.local', 51717],
 	    ['w', 'Say %s', 'say', 'I am connected!'],
 	    ['w', 'Nose color: %m.noseColor', 'nose_color', 'red'],
 	    ['w', 'Voice: %m.voice', 'voice', 'english'],
@@ -242,7 +244,7 @@ new (function() {
 	    ['w', 'set rotate speed %n', 'set_rotate_speed', 100],
 	    ['w', 'Mouth: %m.expression', 'mouthExpression', 'smile'],
 	    ['w', 'Jugadores de %m.equipo', 'futbol1', 'Cordoba'],
-            ['w', 'Luz de color %m.colorLuz', 'luz', 'Blue'],
+            ['w', 'Luz de color %m.colorLuz brilloLuz:%n', 'luz', 'Blue', 50],
 	    ['b', 'is connected', 'is_connected'],
 	    ['h', 'when touch %m.touchZone', 'is_touch', 'up'],
 	    ['h', 'when listen %s', 'when_listen', 'hello'],
