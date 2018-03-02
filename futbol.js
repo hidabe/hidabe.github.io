@@ -282,7 +282,7 @@ new (function() {
 	    ['w', 'Mouth: %m.expression', 'mouthExpression', 'smile'],
 	    ['w', 'Jugadores de %m.equipo', 'futbol1', 'Cordoba'],
             ['w', 'Luz de color %m.colorLuz brilloLuz:%n token:%n', 'luz', 'Blue', 50, 'TOKEN-HERE'],
-	    ['w', 'La palabra %s en el idioma $m.idioma se traduce al %m.idioma', 'traducir', 'Hello'],
+	    ['w', 'La palabra %s en el idioma %m.idioma se traduce al %m.idioma', 'traducir', 'Hello'],
 	    ['b', 'is connected', 'is_connected'],
 	    ['h', 'when touch %m.touchZone', 'is_touch', 'up'],
 	    ['h', 'when listen %s', 'when_listen', 'hello'],
