@@ -287,7 +287,7 @@ new (function() {
 	    ['h', 'when touch %m.touchZone', 'is_touch', 'up'],
 	    ['h', 'when listen %s', 'when_listen', 'hello'],
 	    ['h', 'when see a face', 'when_seeFace'],
-	    ['h', 'when message received', 'message_received'],
+	    ['h', 'when message received', 'message_received']
 	],
 	menus: {
             motorDirection: ['left', 'right', 'up', 'down'],
