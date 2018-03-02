@@ -175,11 +175,11 @@ new (function() {
 	var colorLuz = 'Blue';    
 	connection.send("-c say -t 'Ok, lo pondre de color "+colorLuz+"'");
 	if (colorLuz == "Blue") {
-		connection.send("-c say -t 'Ok, te lo podré en Azul');
+		connection.send("-c say -t 'Ok, te lo podré en Azul'");
 	} else if (colorLuz == "Green") {
-		connection.send("-c say -t 'Ok, te lo podré en Verde');
+		connection.send("-c say -t 'Ok, te lo podré en Verde'");
 	} else if (colorLuz == "Red") {
-		connection.send("-c say -t 'Ok, te lo podré en Rojo');
+		connection.send("-c say -t 'Ok, te lo podré en Rojo'");
 	}
     };
 
