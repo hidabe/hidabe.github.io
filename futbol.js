@@ -214,7 +214,7 @@ new (function() {
     request.setRequestHeader("X-Auth-Token", '5c1d825a');
       },
       dataType: "json",
-      url: "https://od-api.oxforddictionaries.com:443/api/v1/entries/+"idiomaOrigen"+/change/translations="+idiomaDestino,
+      url: "https://od-api.oxforddictionaries.com:443/api/v1/entries/"+idiomaOrigen+ "/change/translations="+idiomaDestino,
       success: function(data) {
     connection.send("-c say -t 'He encontrado la traduccion "+data.results[0].lexicalEntries[0].senses[0].subsenses[0].translations[0].text,+".'");
       }
