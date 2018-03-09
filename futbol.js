@@ -173,7 +173,7 @@ new (function() {
 	
     ext.luz = function(colorLuz, brilloLuz, token, callback) {
 	   
-	connection.send("-c say -t 'el brillo es  "+brilloLuz+"'");
+	connection.send("-c say -t 'el brillo es "+brilloLuz+" y el token es "+token+"'");
 	if (colorLuz == "blue") {
 		connection.send("-c say -t 'Ok, te lo podré en Azul'");
 	} else if (colorLuz == "green") {
