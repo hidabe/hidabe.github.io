@@ -192,7 +192,7 @@ new (function() {
 	    $.ajax({
 	    data:{ color: colorLuz },
 	    beforeSend: function(request) {
-		request.setRequestHeader("Authorization", 'Bearer '+token);
+		request.setRequestHeader("Authorization: ", 'Bearer '+token);
 	    },
 	    dataType: "json",
 	    url: "https://api.lifx.com/v1/lights/all/state",
