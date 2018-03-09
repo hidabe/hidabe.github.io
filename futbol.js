@@ -195,10 +195,7 @@ new (function() {
 	    beforeSend: function(request) {
 		request.setRequestHeader("Authorization", 'Bearer '+token);
 	    },
-	    dataType: "json",
 	    url: "https://api.lifx.com/v1/lights/all/state",
-	    success: function(data) {
-	    }
 	});
 		
 	} else {
