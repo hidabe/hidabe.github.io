@@ -172,13 +172,13 @@ new (function() {
     };
 	
     ext.luz = function(colorLuz, brilloLuz, token, callback) {
-	var colorLuz = 'Blue';    
+	   
 	connection.send("-c say -t 'el brillo es  "+brilloLuz+"'");
-	if (colorLuz == "Blue") {
+	if (colorLuz == "blue") {
 		connection.send("-c say -t 'Ok, te lo podré en Azul'");
-	} else if (colorLuz == "Green") {
+	} else if (colorLuz == "green") {
 		connection.send("-c say -t 'Ok, te lo podré en Verde'");
-	} else if (colorLuz == "Red") {
+	} else if (colorLuz == "red") {
 		connection.send("-c say -t 'Ok, te lo podré en Rojo'");
 	}
 	
@@ -190,9 +190,10 @@ new (function() {
 			connection.send("-c say -t 'Ojo, esto te va a doler'");
 		}
 	    $.ajax({
+	    method:"PUT",
 	    data:{ color: colorLuz },
 	    beforeSend: function(request) {
-		request.setRequestHeader("Authorization: ", 'Bearer '+token);
+		request.setRequestHeader("Authorization", 'Bearer '+token);
 	    },
 	    dataType: "json",
 	    url: "https://api.lifx.com/v1/lights/all/state",
@@ -281,7 +282,7 @@ new (function() {
 	    ['w', 'set rotate speed %n', 'set_rotate_speed', 100],
 	    ['w', 'Mouth: %m.expression', 'mouthExpression', 'smile'],
 	    ['w', 'Jugadores de %m.equipo', 'futbol1', 'Cordoba'],
-            ['w', 'Luz de color %m.colorLuz brilloLuz:%n token:%n', 'luz', 'Blue', 50, 'TOKEN-HERE'],
+            ['w', 'Luz de color %m.colorLuz brilloLuz:%n token:%n', 'luz', 'blue', 50, 'TOKEN-HERE'],
 	    ['w', 'La palabra %s en el idioma %m.idioma se traduce al %m.idioma', 'traducir', 'Hello'],
 	    ['b', 'is connected', 'is_connected'],
 	    ['h', 'when touch %m.touchZone', 'is_touch', 'up'],
@@ -298,7 +299,7 @@ new (function() {
 	    lessMore: ['<', '>'],
             eNe: ['=','not ='],
 	    equipo: ['Cordoba', 'Madrid', 'Barcelona'],
-	    colorLuz: ['Blue', 'Green', 'Red'],
+	    colorLuz: ['blue', 'green', 'red'],
             idioma: ['es','en','pt']
     	},
     	url: 'https://github.com/LLK/scratchx/wiki#blocks'
