@@ -193,7 +193,7 @@ new (function() {
 	    method:"PUT",
 	    data:{ color: colorLuz },
 	    beforeSend: function(request) {
-		request.setRequestHeader("Authorization", 'Bearer '+token);
+		request.setRequestHeader("Authorization", "'Bearer '+token");
 	    },
 	    url: "https://api.lifx.com/v1/lights/all/state",
 	});
