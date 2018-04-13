@@ -19,7 +19,8 @@ new (function() {
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
-            ['b', 'frase sw', 'get_phrase', '1']
+            ['b', 'frase sw', 'get_phrase', '1'],
+            ['r', 'frase sw r', 'get_phrase', '1']
         ]
     };
 
