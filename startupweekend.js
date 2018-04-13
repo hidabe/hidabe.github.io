@@ -1,6 +1,3 @@
-/* QBO Extension Scratch       */
-/* Powered for StartupWeekend! */
-
 new (function() {
     var ext = this;
     var connected = false;
