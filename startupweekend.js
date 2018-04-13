@@ -19,7 +19,7 @@ new (function() {
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
-            ['', 'coge frases aleatorias según el día (Viernes, Sábado o Domingo)', 'get_phrase', '1']
+            ['b', 'frase sw', 'get_phrase', '1']
         ]
     };
 
