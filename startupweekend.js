@@ -1,3 +1,5 @@
+/* Extension StartupWeekend */
+
 new (function() {
     var ext = this;
     var connected = false;
