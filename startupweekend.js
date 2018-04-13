@@ -11,16 +11,19 @@ new (function() {
         return {status: 2, msg: 'Ready'};
     };
 
-    ext.get_phrase = function(count) {
+    /**
+     * Coge una frase aleatoria dependiendo del día de semana y hora
+     * @returns {string}
+     */
+    ext.get_phrase = function() {
 		// TODO: Debug, completar cuando ya enganche todo
-		return "Hola caracola";
+		return "Esto es un texto de prueba, cambiar por texto random";
     };
 
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
-            ['b', 'frase sw', 'get_phrase', '1'],
-            ['r', 'frase sw r', 'get_phrase', '1']
+            ['r', 'Consejo Aleatorio', 'get_phrase']
         ]
     };
 
